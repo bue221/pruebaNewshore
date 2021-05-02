@@ -1,1 +1,5 @@
 <p>detail-house works!</p>
+<li *ngFor="let item of characters">
+  {{ item.name }}
+  <img [src]="item.image" alt="" srcset="" />
+</li>

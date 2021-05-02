@@ -5,7 +5,7 @@ import { ListHousesComponent } from './pages/list-houses/list-houses.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: ListHousesComponent },
-  { path: 'detail-house/:id', component: DetailHouseComponent },
+  { path: 'detail-house/:house', component: DetailHouseComponent },
   { path: '**', redirectTo: '/' },
 ];
 

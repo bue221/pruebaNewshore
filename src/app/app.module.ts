@@ -1,12 +1,17 @@
+//modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+//components
 import { AppComponent } from './app.component';
 import { CardHousesComponent } from './components/card-houses/card-houses.component';
 import { CardStudentsComponent } from './components/card-students/card-students.component';
 import { ListHousesComponent } from './pages/list-houses/list-houses.component';
 import { DetailHouseComponent } from './pages/detail-house/detail-house.component';
+import { ReducePipe } from './customPipes/reduce.pipe';
+import { FilterPipe } from './customPipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -14,13 +19,12 @@ import { DetailHouseComponent } from './pages/detail-house/detail-house.componen
     CardHousesComponent,
     CardStudentsComponent,
     ListHousesComponent,
-    DetailHouseComponent
+    DetailHouseComponent,
+    ReducePipe,
+    FilterPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
