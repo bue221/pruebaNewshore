@@ -12,6 +12,7 @@ import { ListHousesComponent } from './pages/list-houses/list-houses.component';
 import { DetailHouseComponent } from './pages/detail-house/detail-house.component';
 import { ReducePipe } from './customPipes/reduce.pipe';
 import { FilterPipe } from './customPipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { FilterPipe } from './customPipes/filter.pipe';
     ReducePipe,
     FilterPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -4,14 +4,29 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'reduce',
 })
 export class ReducePipe implements PipeTransform {
-  transform(value: any): any {
-    if (!value) return null;
+  transform(collection: any[], property: string): any[] {
+    if (!collection) null;
 
-    return value.reduce((countHouses: any, house: any) => {
-      countHouses[house.house !== '' ? house.house : 'no house'] =
-        (countHouses[house.house] || 0) + 1;
-      console.log(countHouses);
-      return countHouses;
-    }, []);
+    const groupedCollection = collection.reduce((previous, current) => {
+      if (!previous[current[property]]) {
+        previous[current[property]] = [current];
+      } else {
+        previous[current[property]].push(current);
+      }
+
+      return previous;
+    }, {});
+
+    // console.log(
+    //   Object.keys(groupedCollection).map((key) => ({
+    //     key,
+    //     value: groupedCollection[key],
+    //   }))
+    // );
+
+    return Object.keys(groupedCollection).map((key) => ({
+      key,
+      value: groupedCollection[key],
+    }));
   }
 }

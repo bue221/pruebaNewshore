@@ -1,7 +1,7 @@
 <p>list-houses works!</p>
 <li
-  *ngFor="let item of HousesCount"
-  [routerLink]="['/detail-house', item.house]"
+  *ngFor="let item of HousesCount | reduce: 'house'"
+  [routerLink]="['/detail-house', item.key]"
 >
-  {{ item.house }}
+  {{ item.key != "" ? item.key : "No house" }}-{{ item.value.length }}
 </li>
