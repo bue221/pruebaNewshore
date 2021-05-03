@@ -8,6 +8,7 @@ import { MseService } from 'src/app/services/mse.service';
 })
 export class ListHousesComponent implements OnInit {
   HousesCount: any[] = [];
+  loading: boolean = false;
 
   constructor(private _mseService: MseService) {}
 
@@ -16,8 +17,12 @@ export class ListHousesComponent implements OnInit {
   }
 
   getCharacters() {
+    this.loading = true;
     this._mseService.getCharacters().subscribe(
-      async (data) => (this.HousesCount = await data)
+      async (data) => {
+        this.loading = false;
+        return (this.HousesCount = await data);
+      }
       // data
     );
   }

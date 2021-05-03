@@ -13,39 +13,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.card {
-  cursor: pointer;
-  max-width: 400px;
-  height: 220px;
-  //   margin-bottom: 10px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
-    filter: brightness(0.5);
-    border-radius: 20px;
-    transform: scale(0.9);
-    transition: all 0.5s ease;
-  }
-  .info:hover,
-  img:hover {
-    transform: scale(1);
-  }
-  .info {
-    position: absolute;
-    text-align: center;
-    h1 {
-      color: white;
-      font-size: 30px;
-      font-weight: bolder;
-    }
-    p {
-      color: gainsboro;
-    }
-  }
-}

@@ -1,1 +1,10 @@
-<p>card-houses works!</p>
+<div class="card" [routerLink]="['/detail-house', item.key]">
+  <img
+    src="https://images.unsplash.com/photo-1509005395573-2d973751f2b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+    alt="house"
+  />
+  <div class="info">
+    <h1>{{ item.key != "" ? item.key : "No house" }}</h1>
+    <p>Number of members: {{ item.value.length }}</p>
+  </div>
+</div>
