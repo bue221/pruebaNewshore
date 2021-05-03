@@ -1,13 +1,22 @@
-<span (click)="goBack()" class="material-icons-outlined"> arrow_back </span>
-<p>detail-house works!</p>
-<input
-  type="text"
-  class="form-control mb-4"
-  placeholder="Search"
-  [(ngModel)]="filter"
-  id="listSearch"
-/>
-<li *ngFor="let item of characters | filter: filter">
-  {{ item.name }}
-  <img [src]="item.image" alt="" srcset="" />
-</li>
+<div class="div-title">
+  <span (click)="goBack()" class="material-icons-outlined"> arrow_back </span>
+  <p>detail house</p>
+</div>
+<div class="filter">
+  <input
+    type="text"
+    class="form-control mb-4"
+    placeholder="Search"
+    [(ngModel)]="filter"
+    id="listSearch"
+  />
+</div>
+<div class="container-house" *ngIf="loading">
+  <app-loader></app-loader>
+</div>
+<div class="container-house" *ngIf="characters">
+  <app-card-students
+    *ngFor="let item of characters | filter: filter"
+    [item]="item"
+  ></app-card-students>
+</div>

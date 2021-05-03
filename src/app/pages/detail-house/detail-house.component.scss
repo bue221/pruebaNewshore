@@ -1,0 +1,30 @@
+.div-title {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  p {
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  span:hover {
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  input {
+    width: 80%;
+  }
+}
+
+.container-house {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

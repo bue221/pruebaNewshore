@@ -12,6 +12,7 @@ export class DetailHouseComponent implements OnInit {
   house: string | null;
   characters: any[] = [];
   public filter: any = '';
+  loading: boolean = false;
 
   constructor(
     private _mseService: MseService,
@@ -26,10 +27,12 @@ export class DetailHouseComponent implements OnInit {
   }
 
   getCharacterByHouse() {
+    this.loading = true;
     if (this.house !== null)
-      this._mseService
-        .getHouseCharacters(this.house)
-        .subscribe((data) => (this.characters = data));
+      this._mseService.getHouseCharacters(this.house).subscribe((data) => {
+        this.loading = false;
+        return (this.characters = data);
+      });
   }
 
   goBack() {
