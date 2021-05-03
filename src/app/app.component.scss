@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  padding: 1rem 1rem;
+  background-color: black;
+  color: white;
+
+  h1 {
+    font-size: 25px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}

@@ -13,6 +13,7 @@ import { DetailHouseComponent } from './pages/detail-house/detail-house.componen
 import { ReducePipe } from './customPipes/reduce.pipe';
 import { FilterPipe } from './customPipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     DetailHouseComponent,
     ReducePipe,
     FilterPipe,
+    LoaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
